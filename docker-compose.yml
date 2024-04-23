@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  my-node:
+    image: qdgiang/demo-github-actions
+    ports:
+      - 8080:8080
+
+  watch-tower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 15
